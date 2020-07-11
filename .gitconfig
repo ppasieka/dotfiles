@@ -1,0 +1,34 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Piotr Pasieka
+[user]
+	email = ppasieka@gmail.com
+[github]
+	user = ppasieka
+[url "https://github"]
+	insteadOf = git://github
+[core]
+	editor = vim
+	pager = delta --theme='Dracula'
+	whitespace = blank-at-eol,tab-in-indent
+[alias]
+	lol = log --decorate --oneline --graph
+	lon = log --oneline
+  lc = log --name-status HEAD^..HEAD
+  aa = add --all
+	co = checkout
+	ci = commit
+  st = status
+  cp = cherry-pick
+[fetch]
+	prune = true
+[credential]
+	helper = cache --timeout 3600
+[commit]
+	verbose = false
+[interactive]
+  diffFilter = delta --color-only
